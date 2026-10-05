@@ -26,31 +26,31 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Auction Service
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./auction-service/Dockerfile
           push: true
           tags: |
-            oyank/auction-service:latest
-            oyank/auction-service:${{ github.sha }}
+            yash01er/auction-service:latest
+            yash01er/auction-service:${{ github.sha }}
 
       - name: Build and Push Bidder Service
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./bidder-service/Dockerfile
           push: true
           tags: |
-            oyank/bidder-service:latest
-            oyank/bidder-service:${{ github.sha }}
+            yash01er/bidder-service:latest
+            yash01er/bidder-service:${{ github.sha }}
 
       - name: Build and Push Campaign Service
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./campaign-service/Dockerfile
           push: true
           tags: |
-            oyank/campaign-service:latest
-            oyank/campaign-service:${{ github.sha }}
+            yash01er/campaign-service:latest
+            yash01er/campaign-service:${{ github.sha }}
